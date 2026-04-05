@@ -1,173 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Journey</title>
+<meta charset="UTF-8">
+<title>Research Journey</title>
 
-  <!-- Leaflet (map library) -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<!-- Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-  <!-- Your existing CSS -->
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      background: #0f172a;
-      color: white;
-    }
+<style>
+body {
+  background: #0f172a;
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
 
-    h1, h2 {
-      text-align: center;
-      margin-top: 40px;
-    }
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px;
+}
 
-    /* MAP */
-    #map {
-      width: 85%;
-      height: 500px;
-      margin: 40px auto;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    }
+h1, h2 {
+  text-align: center;
+  margin: 40px 0 20px;
+}
 
-    /* INTERESTS */
-    .interests {
-      width: 85%;
-      margin: 60px auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
+#map {
+  height: 500px;
+  border-radius: 16px;
+  margin: 30px 0;
+}
 
-    .interest-card {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 14px;
-      text-align: center;
-      transition: 0.3s;
-    }
+.section {
+  margin-top: 60px;
+}
 
-    .interest-card:hover {
-      transform: translateY(-6px);
-      background: #334155;
-    }
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 15px;
+}
 
-    .interest-title {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
+.card strong {
+  color: #38bdf8;
+}
 
-    .progress-bar {
-      height: 6px;
-      background: #334155;
-      border-radius: 10px;
-      overflow: hidden;
-    }
+/* Interests */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
 
-    .progress {
-      height: 100%;
-      background: #38bdf8;
-    }
+.progress-bar {
+  height: 6px;
+  background: #334155;
+  border-radius: 10px;
+  margin-top: 8px;
+}
 
-    /* BACK BUTTON */
-    .back-btn {
-      display: block;
-      text-align: center;
-      margin: 30px;
-    }
+.progress {
+  height: 100%;
+  background: #38bdf8;
+}
 
-    .back-btn a {
-      color: #38bdf8;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  </style>
+.back {
+  text-align: center;
+  margin-top: 40px;
+}
+</style>
 </head>
 
 <body>
 
-<h1>🌍 My Journey</h1>
+<div class="container">
+
+<h1>🌍 Research Journey</h1>
 
 <div id="map"></div>
 
-<h2>🎯 Interests</h2>
+<!-- ================= EDUCATION ================= -->
+<div class="section">
+<h2>Education</h2>
 
-<div class="interests">
+<div class="card">
+<strong>Bachelor of Computer Science (Honours)</strong><br>
+University of Technology Sydney (UTS)<br>
+Dean’s List 2024 & 2025 · GPA 7.0<br>
+Focus: AI, Data Science, Machine Learning
+</div>
 
-  <div class="interest-card">
-    <div class="interest-title">Snowboarding</div>
-    <div class="progress-bar"><div class="progress" style="width:80%"></div></div>
-  </div>
-
-  <div class="interest-card">
-    <div class="interest-title">Beer Brewing</div>
-    <div class="progress-bar"><div class="progress" style="width:70%"></div></div>
-  </div>
-
-  <div class="interest-card">
-    <div class="interest-title">Wakeboarding</div>
-    <div class="progress-bar"><div class="progress" style="width:75%"></div></div>
-  </div>
-
-  <div class="interest-card">
-    <div class="interest-title">Sailing</div>
-    <div class="progress-bar"><div class="progress" style="width:78%"></div></div>
-  </div>
-
-  <div class="interest-card">
-    <div class="interest-title">Photography</div>
-    <div class="progress-bar"><div class="progress" style="width:85%"></div></div>
-  </div>
-
-  <div class="interest-card">
-    <div class="interest-title">Book Writing</div>
-    <div class="progress-bar"><div class="progress" style="width:65%"></div></div>
-  </div>
+<div class="card">
+<strong>Diploma in Applied Mathematics</strong><br>
+National University of Singapore
+</div>
 
 </div>
 
-<div class="back-btn">
-  <a href="index.html">← Back to Main Page</a>
+<!-- ================= EXPERIENCE ================= -->
+<div class="section">
+<h2>Experience</h2>
+
+<div class="card">
+<strong>Academic Tutor – UTS</strong><br>
+Mathematical Statistics, Python Programming, Computer Science Research Studio
+</div>
+
+<div class="card">
+<strong>IT PMO Assistant – UTS</strong><br>
+Managing IT projects, stakeholders, and system coordination
+</div>
+
+<div class="card">
+<strong>Data Arena Presenter – UTS</strong><br>
+Delivering high-tech immersive data visualisation presentations
+</div>
+
+<div class="card">
+<strong>WebArXiv Research Project</strong><br>
+Developed multimodal web agent benchmark with reflection-based reasoning
+</div>
+
+<div class="card">
+<strong>Squidle+ Marine AI Project</strong><br>
+Human-in-the-loop image classification for marine scientists and Antarctic research
+</div>
+
+</div>
+
+<!-- ================= TEACHING ================= -->
+<div class="section">
+<h2>Teaching</h2>
+
+<div class="card">
+Facilitated tutoring sessions and academic support for programming and statistics courses at UTS
+</div>
+
+</div>
+
+<!-- ================= SERVICE ================= -->
+<div class="section">
+<h2>Professional Service</h2>
+
+<div class="card">
+UTS Student Ambassador · Robotics Society · AI Society
+</div>
+
+</div>
+
+<!-- ================= PRESENTATIONS ================= -->
+<div class="section">
+<h2>Presentations</h2>
+
+<div class="card">
+Research demos on WebArXiv, Q-Learning, Neural Networks, and AI systems
+</div>
+
+</div>
+
+<!-- ================= INTERESTS ================= -->
+<div class="section">
+<h2>Interests</h2>
+
+<div class="grid">
+
+<div>
+Snowboarding
+<div class="progress-bar"><div class="progress" style="width:80%"></div></div>
+</div>
+
+<div>
+Beer Brewing
+<div class="progress-bar"><div class="progress" style="width:70%"></div></div>
+</div>
+
+<div>
+Wakeboarding
+<div class="progress-bar"><div class="progress" style="width:75%"></div></div>
+</div>
+
+<div>
+Sailing
+<div class="progress-bar"><div class="progress" style="width:78%"></div></div>
+</div>
+
+<div>
+Photography
+<div class="progress-bar"><div class="progress" style="width:85%"></div></div>
+</div>
+
+<div>
+Book Writing
+<div class="progress-bar"><div class="progress" style="width:65%"></div></div>
+</div>
+
+</div>
+</div>
+
+<div class="back">
+<a href="index.html">← Back to Main Page</a>
+</div>
+
 </div>
 
 <script>
-  // Initialize map
-  const map = L.map('map').setView([0, 20], 2);
+// MAP
+const map = L.map('map').setView([20, 0], 2);
 
-  // Map tiles
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap'
-  }).addTo(map);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
-  // 📍 YOUR LOCATIONS (EDIT THESE)
-  const locations = [
-    {
-      coords: [-33.8688, 151.2093],
-      title: "Sydney 🇦🇺",
-      desc: "UTS – Study, research, teaching"
-    },
-    {
-      coords: [1.3521, 103.8198],
-      title: "Singapore 🇸🇬",
-      desc: "High school + diploma"
-    },
-    {
-      coords: [39.9042, 116.4074],
-      title: "China 🇨🇳",
-      desc: "Background + early education"
-    }
-  ];
+// Locations
+const locations = [
+  {
+    coords: [-33.8688, 151.2093],
+    title: "Sydney 🇦🇺",
+    desc: "UTS – Study, tutoring, research"
+  },
+  {
+    coords: [1.3521, 103.8198],
+    title: "Singapore 🇸🇬",
+    desc: "High school + diploma"
+  },
+  {
+    coords: [-42.8821, 147.3272],
+    title: "Hobart 🇦🇺",
+    desc: "Squidle+ marine AI project with IMAS"
+  },
+  {
+    coords: [63.4305, 10.3951],
+    title: "Trondheim 🇳🇴",
+    desc: "NTNU AUR Lab – first contact with IMAS researchers"
+  }
+];
 
-  // Add markers
-  locations.forEach(loc => {
-    L.marker(loc.coords)
-      .addTo(map)
-      .bindPopup(`<b>${loc.title}</b><br>${loc.desc}`);
-  });
+locations.forEach(loc => {
+  L.marker(loc.coords)
+    .addTo(map)
+    .bindPopup(`<b>${loc.title}</b><br>${loc.desc}`);
+});
 </script>
 
 </body>
