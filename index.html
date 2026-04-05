@@ -868,9 +868,9 @@
     const body = document.body;
     
       // Load saved mode
-    if (localStorage.getItem('theme') === 'dark') {
+    if (localStorage.getItem('theme') === 'light') {
       body.classList.add('light-mode');
-      toggleBtn.textContent = '☀️';
+      toggleBtn.textContent = '🌙';
     }
     
     toggleBtn.addEventListener('click', () => {
