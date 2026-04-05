@@ -409,6 +409,25 @@
     body.light-mode a {
       color: var(--accent);
     }
+    /* ============================= */
+    /* 🔥 FIX ABOUT SECTION */
+    /* ============================= */
+    
+    body.light-mode .hero-about {
+      background: rgba(255,255,255,0.9);  /* make background light */
+    }
+    
+    body.light-mode .hero-about p {
+      color: var(--text-main);  /* FIX paragraphs */
+    }
+    
+    body.light-mode .hero-about h2 {
+      color: var(--text-main);  /* FIX title */
+    }
+    
+    body.light-mode .section-label {
+      color: var(--accent); /* keep nice accent */
+    }
   </style>
 </head>
 
@@ -837,6 +856,7 @@
       }
     });
   </script>
+  
   <script>
     // set current year
     document.getElementById('year').textContent = new Date().getFullYear();
