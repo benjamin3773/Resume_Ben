@@ -90,6 +90,10 @@
       border-color: var(--accent-soft);
     }
 
+    .navbar {
+      background: rgba(10, 10, 15, 0.9) !important;
+    }
+
     /* Hero */
     .hero {
       min-height: 100vh;
@@ -427,6 +431,19 @@
     
     body.light-mode .section-label {
       color: var(--accent); /* keep nice accent */
+    }
+    /* ============================= */
+    /* 🔒 FORCE NAVBAR ALWAYS DARK */
+    /* ============================= */
+    
+    .navbar {
+      background: rgba(0, 0, 0, 0.85) !important;
+    }
+    
+    /* Keep text readable */
+    .navbar a,
+    .navbar-brand {
+      color: #f5f5f7 !important;
     }
   </style>
 </head>
