@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Journey</title>
+
+  <!-- Leaflet (map library) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Your existing CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: #0f172a;
+      color: white;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    /* MAP */
+    #map {
+      width: 85%;
+      height: 500px;
+      margin: 40px auto;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    /* INTERESTS */
+    .interests {
+      width: 85%;
+      margin: 60px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .interest-card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 14px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .interest-card:hover {
+      transform: translateY(-6px);
+      background: #334155;
+    }
+
+    .interest-title {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .progress-bar {
+      height: 6px;
+      background: #334155;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress {
+      height: 100%;
+      background: #38bdf8;
+    }
+
+    /* BACK BUTTON */
+    .back-btn {
+      display: block;
+      text-align: center;
+      margin: 30px;
+    }
+
+    .back-btn a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>🌍 My Journey</h1>
+
+<div id="map"></div>
+
+<h2>🎯 Interests</h2>
+
+<div class="interests">
+
+  <div class="interest-card">
+    <div class="interest-title">Snowboarding</div>
+    <div class="progress-bar"><div class="progress" style="width:80%"></div></div>
+  </div>
+
+  <div class="interest-card">
+    <div class="interest-title">Beer Brewing</div>
+    <div class="progress-bar"><div class="progress" style="width:70%"></div></div>
+  </div>
+
+  <div class="interest-card">
+    <div class="interest-title">Wakeboarding</div>
+    <div class="progress-bar"><div class="progress" style="width:75%"></div></div>
+  </div>
+
+  <div class="interest-card">
+    <div class="interest-title">Sailing</div>
+    <div class="progress-bar"><div class="progress" style="width:78%"></div></div>
+  </div>
+
+  <div class="interest-card">
+    <div class="interest-title">Photography</div>
+    <div class="progress-bar"><div class="progress" style="width:85%"></div></div>
+  </div>
+
+  <div class="interest-card">
+    <div class="interest-title">Book Writing</div>
+    <div class="progress-bar"><div class="progress" style="width:65%"></div></div>
+  </div>
+
+</div>
+
+<div class="back-btn">
+  <a href="index.html">← Back to Main Page</a>
+</div>
+
+<script>
+  // Initialize map
+  const map = L.map('map').setView([0, 20], 2);
+
+  // Map tiles
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap'
+  }).addTo(map);
+
+  // 📍 YOUR LOCATIONS (EDIT THESE)
+  const locations = [
+    {
+      coords: [-33.8688, 151.2093],
+      title: "Sydney 🇦🇺",
+      desc: "UTS – Study, research, teaching"
+    },
+    {
+      coords: [1.3521, 103.8198],
+      title: "Singapore 🇸🇬",
+      desc: "High school + diploma"
+    },
+    {
+      coords: [39.9042, 116.4074],
+      title: "China 🇨🇳",
+      desc: "Background + early education"
+    }
+  ];
+
+  // Add markers
+  locations.forEach(loc => {
+    L.marker(loc.coords)
+      .addTo(map)
+      .bindPopup(`<b>${loc.title}</b><br>${loc.desc}`);
+  });
+</script>
+
+</body>
+</html>
