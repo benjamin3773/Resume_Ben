@@ -73,21 +73,32 @@
 
     .nav-links {
       display: flex;
-      gap: 20px;
+      gap: 10px;
       font-size: 14px;
     }
 
     .nav-links a {
       text-decoration: none;
-      color: var(--text-muted);
-      padding: 4px 0;
-      border-bottom: 1px solid transparent;
-      transition: color 0.15s ease, border-color 0.15s ease;
+      color: var(--text-main);
+    
+      padding: 8px 14px;              /* 🔥 bigger click area */
+      border-radius: 999px;          /* pill shape */
+    
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border-subtle);
+    
+      font-size: 14px;
+      font-weight: 500;
+    
+      transition: all 0.2s ease;
     }
 
     .nav-links a:hover {
-      color: var(--accent);
-      border-color: var(--accent-soft);
+      background: var(--accent-soft);
+      border-color: var(--accent);
+      color: var(--text-main);
+    
+      transform: translateY(-1px);
     }
 
     .navbar {
