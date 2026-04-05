@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>Research Journey</title>
 
-<!-- Leaflet -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
@@ -18,7 +17,7 @@ body {
 }
 
 .container {
-  max-width: 900px;
+  max-width: 1100px;
   margin: auto;
   padding: 40px;
 }
@@ -34,6 +33,7 @@ h1, h2 {
   margin: 30px 0;
 }
 
+/* Sections */
 .section {
   margin-top: 60px;
 }
@@ -45,29 +45,45 @@ h1, h2 {
   margin-bottom: 15px;
 }
 
-.card strong {
-  color: #38bdf8;
-}
-
-/* Interests */
-.grid {
+/* Skills Layout */
+.skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 40px;
 }
 
-.progress-bar {
-  height: 6px;
+.skills-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.skill-item {
+  margin-bottom: 20px;
+}
+
+.skill-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.skill-bar {
+  height: 8px;
   background: #334155;
   border-radius: 10px;
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
-.progress {
+.skill-fill {
   height: 100%;
-  background: #38bdf8;
+  background: #2dd4bf;
 }
 
+/* Back button */
 .back {
   text-align: center;
   margin-top: 40px;
@@ -90,8 +106,7 @@ h1, h2 {
 <div class="card">
 <strong>Bachelor of Computer Science (Honours)</strong><br>
 University of Technology Sydney (UTS)<br>
-Dean’s List 2024 & 2025 · GPA 7.0<br>
-Focus: AI, Data Science, Machine Learning
+Dean’s List 2024 & 2025 · GPA 7.0
 </div>
 
 <div class="card">
@@ -106,27 +121,12 @@ National University of Singapore
 <h2>Experience</h2>
 
 <div class="card">
-<strong>Academic Tutor – UTS</strong><br>
-Mathematical Statistics, Python Programming, Computer Science Research Studio
-</div>
-
-<div class="card">
-<strong>IT PMO Assistant – UTS</strong><br>
-Managing IT projects, stakeholders, and system coordination
-</div>
-
-<div class="card">
-<strong>Data Arena Presenter – UTS</strong><br>
-Delivering high-tech immersive data visualisation presentations
-</div>
-
-<div class="card">
-<strong>WebArXiv Research Project</strong><br>
+WebArXiv: Evaluating Multimodal Agents on Time-Invariant arXiv Tasks<br>
 Developed multimodal web agent benchmark with reflection-based reasoning
 </div>
 
 <div class="card">
-<strong>Squidle+ Marine AI Project</strong><br>
+Squidle+ Marine AI Project<br>
 Human-in-the-loop image classification for marine scientists and Antarctic research
 </div>
 
@@ -137,7 +137,16 @@ Human-in-the-loop image classification for marine scientists and Antarctic resea
 <h2>Teaching</h2>
 
 <div class="card">
-Facilitated tutoring sessions and academic support for programming and statistics courses at UTS
+<strong>Academic Tutor – UTS</strong><br><br>
+
+• <strong>Mathematical Statistics</strong><br>
+Probability theory, statistical inference, and analytical problem-solving.<br><br>
+
+• <strong>Python Programming</strong><br>
+Coding fundamentals, data structures, and real-world applications.<br><br>
+
+• <strong>Computer Science Research Studio</strong><br>
+Research methodology, project design, and AI system development.
 </div>
 
 </div>
@@ -147,7 +156,12 @@ Facilitated tutoring sessions and academic support for programming and statistic
 <h2>Professional Service</h2>
 
 <div class="card">
-UTS Student Ambassador · Robotics Society · AI Society
+<strong>IT PMO Assistant Administrator – UTS</strong><br>
+Managing IT projects, stakeholder communication, and system coordination.
+</div>
+
+<div class="card">
+UTS Student Ambassador · Robotics Society · Data Science & AI Society
 </div>
 
 </div>
@@ -157,45 +171,92 @@ UTS Student Ambassador · Robotics Society · AI Society
 <h2>Presentations</h2>
 
 <div class="card">
-Research demos on WebArXiv, Q-Learning, Neural Networks, and AI systems
+<strong>Data Arena Presenter – UTS</strong><br>
+Delivered immersive 360° data visualisation presentations.
+</div>
+
+<div class="card">
+AI Technique Demonstrations: Q-Learning, Neural Networks, Web Agents
 </div>
 
 </div>
 
-<!-- ================= INTERESTS ================= -->
+<!-- ================= SKILLS ================= -->
 <div class="section">
-<h2>Interests</h2>
+<h2>Skills</h2>
 
-<div class="grid">
+<div class="skills-grid">
 
+<!-- LEFT -->
 <div>
-Snowboarding
-<div class="progress-bar"><div class="progress" style="width:80%"></div></div>
+<div class="skills-title">Programming & Tools</div>
+
+<div class="skill-item">
+<div class="skill-name">🐍 Python</div>
+<div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
 </div>
 
-<div>
-Beer Brewing
-<div class="progress-bar"><div class="progress" style="width:70%"></div></div>
+<div class="skill-item">
+<div class="skill-name">🧠 Machine Learning</div>
+<div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
 </div>
 
-<div>
-Wakeboarding
-<div class="progress-bar"><div class="progress" style="width:75%"></div></div>
+<div class="skill-item">
+<div class="skill-name">📊 Data Analysis</div>
+<div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
 </div>
 
-<div>
-Sailing
-<div class="progress-bar"><div class="progress" style="width:78%"></div></div>
+<div class="skill-item">
+<div class="skill-name">👁️ Computer Vision</div>
+<div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
 </div>
 
-<div>
-Photography
-<div class="progress-bar"><div class="progress" style="width:85%"></div></div>
+<div class="skill-item">
+<div class="skill-name">🌐 Web Automation</div>
+<div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
 </div>
 
+<div class="skill-item">
+<div class="skill-name">⚙️ C++ / OpenGL</div>
+<div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+</div>
+
+</div>
+
+<!-- RIGHT -->
 <div>
-Book Writing
-<div class="progress-bar"><div class="progress" style="width:65%"></div></div>
+<div class="skills-title">Interests</div>
+
+<div class="skill-item">
+<div class="skill-name">🏂 Snowboarding</div>
+<div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+</div>
+
+<div class="skill-item">
+<div class="skill-name">🍺 Beer Brewing</div>
+<div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+</div>
+
+<div class="skill-item">
+<div class="skill-name">🌊 Wakeboarding</div>
+<div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+</div>
+
+<div class="skill-item">
+<div class="skill-name">⛵ Sailing</div>
+<div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div>
+</div>
+
+<div class="skill-item">
+<div class="skill-name">📷 Photography</div>
+<div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+</div>
+
+<div class="skill-item">
+<div class="skill-name">📖 Book Writing</div>
+<div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
+</div>
+
 </div>
 
 </div>
@@ -208,39 +269,20 @@ Book Writing
 </div>
 
 <script>
-// MAP
 const map = L.map('map').setView([20, 0], 2);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
-// Locations
 const locations = [
-  {
-    coords: [-33.8688, 151.2093],
-    title: "Sydney 🇦🇺",
-    desc: "UTS – Study, tutoring, research"
-  },
-  {
-    coords: [1.3521, 103.8198],
-    title: "Singapore 🇸🇬",
-    desc: "High school + diploma"
-  },
-  {
-    coords: [-42.8821, 147.3272],
-    title: "Hobart 🇦🇺",
-    desc: "Squidle+ marine AI project with IMAS"
-  },
-  {
-    coords: [63.4305, 10.3951],
-    title: "Trondheim 🇳🇴",
-    desc: "NTNU AUR Lab – first contact with IMAS researchers"
-  }
+  { coords: [-33.8688,151.2093], title:"Sydney 🇦🇺", desc:"UTS – Study, tutoring, research"},
+  { coords: [1.3521,103.8198], title:"Singapore 🇸🇬", desc:"Education background"},
+  { coords: [-42.8821,147.3272], title:"Hobart 🇦🇺", desc:"Squidle+ marine AI project"},
+  { coords: [63.4305,10.3951], title:"Trondheim 🇳🇴", desc:"NTNU AUR Lab – IMAS connection"}
 ];
 
-locations.forEach(loc => {
-  L.marker(loc.coords)
-    .addTo(map)
-    .bindPopup(`<b>${loc.title}</b><br>${loc.desc}`);
+locations.forEach(loc=>{
+  L.marker(loc.coords).addTo(map)
+  .bindPopup(`<b>${loc.title}</b><br>${loc.desc}`);
 });
 </script>
 
