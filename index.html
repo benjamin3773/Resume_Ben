@@ -382,6 +382,33 @@
       border-top: 1px solid var(--border-subtle);
       background: #05060b;
     }
+    /* ============================= */
+    /* 🌞 LIGHT MODE FIXES */
+    /* ============================= */
+    
+    /* Fix text visibility inside cards */
+    body.light-mode .contact-card,
+    body.light-mode .hero-about,
+    body.light-mode .hero-card {
+      color: var(--text-main);
+    }
+    
+    /* Make cards light in light mode */
+    body.light-mode .contact-card {
+      background: rgba(255,255,255,0.95);
+      border: 1px solid var(--border-subtle);
+    }
+    
+    /* Fix footer in light mode */
+    body.light-mode footer {
+      background: #f1f5f9;
+      color: var(--text-muted);
+    }
+    
+    /* Fix links visibility */
+    body.light-mode a {
+      color: var(--accent);
+    }
   </style>
 </head>
 
