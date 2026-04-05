@@ -821,7 +821,7 @@
       // Load saved mode
     if (localStorage.getItem('theme') === 'light') {
       body.classList.add('light-mode');
-      toggleBtn.textContent = '☀️';
+      toggleBtn.textContent = '🌙';
     }
     
     toggleBtn.addEventListener('click', () => {
@@ -829,10 +829,10 @@
     
       if (body.classList.contains('light-mode')) {
         localStorage.setItem('theme', 'light');
-        toggleBtn.textContent = '☀️';
+        toggleBtn.textContent = '🌙';
       } else {
         localStorage.setItem('theme', 'dark');
-        toggleBtn.textContent = '🌙';
+        toggleBtn.textContent = '☀️';
       }
     });
   </script>
