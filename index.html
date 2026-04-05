@@ -866,22 +866,27 @@
   <script>
     const toggleBtn = document.getElementById('theme-toggle');
     const body = document.body;
-    
-      // Load saved mode
-    if (localStorage.getItem('theme') === 'light') {
+  
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme');
+  
+    if (savedTheme === 'light') {
       body.classList.add('light-mode');
-      toggleBtn.textContent = '🌙';
+      toggleBtn.textContent = '🌙'; // show moon (switch to dark)
+    } else {
+      body.classList.remove('light-mode');
+      toggleBtn.textContent = '☀️'; // show sun (switch to light)
     }
-    
+  
     toggleBtn.addEventListener('click', () => {
       body.classList.toggle('light-mode');
-    
+  
       if (body.classList.contains('light-mode')) {
         localStorage.setItem('theme', 'light');
-        toggleBtn.textContent = '🌙';
+        toggleBtn.textContent = '🌙'; // now in light → show moon
       } else {
         localStorage.setItem('theme', 'dark');
-        toggleBtn.textContent = '☀️';
+        toggleBtn.textContent = '☀️'; // now in dark → show sun
       }
     });
   </script>
