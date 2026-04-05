@@ -1,173 +1,353 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Journey</title>
+<meta charset="UTF-8">
+<title>Photography Gallery</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Leaflet (map library) -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+:root {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+}
 
-  <!-- Your existing CSS -->
-  <link rel="stylesheet" href="style.css">
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
 
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      background: #0f172a;
-      color: white;
-    }
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: #020617;
+}
 
-    h1, h2 {
-      text-align: center;
-      margin-top: 40px;
-    }
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
 
-    /* MAP */
-    #map {
-      width: 85%;
-      height: 500px;
-      margin: 40px auto;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    }
+.navbar a:hover {
+  color: var(--accent);
+}
 
-    /* INTERESTS */
-    .interests {
-      width: 85%;
-      margin: 60px auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
+/* TITLE */
+.title {
+  text-align: center;
+  font-size: 32px;
+  margin: 40px 0;
+}
 
-    .interest-card {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 14px;
-      text-align: center;
-      transition: 0.3s;
-    }
+/* GRID */
+.gallery {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  padding: 0 20px 60px;
+}
 
-    .interest-card:hover {
-      transform: translateY(-6px);
-      background: #334155;
-    }
+/* CARD */
+.card {
+  background: var(--card);
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.2s;
+}
 
-    .interest-title {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
+.card:hover {
+  transform: translateY(-6px);
+}
 
-    .progress-bar {
-      height: 6px;
-      background: #334155;
-      border-radius: 10px;
-      overflow: hidden;
-    }
+.card img, .card video {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
 
-    .progress {
-      height: 100%;
-      background: #38bdf8;
-    }
+.content {
+  padding: 16px;
+}
 
-    /* BACK BUTTON */
-    .back-btn {
-      display: block;
-      text-align: center;
-      margin: 30px;
-    }
+.content h3 {
+  margin: 0;
+}
 
-    .back-btn a {
-      color: #38bdf8;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  </style>
+.content p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.date {
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.95);
+}
+
+.modal-content {
+  display: block;
+  margin: auto;
+  max-width: 85%;
+  max-height: 80vh;
+  margin-top: 60px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+}
+
+.controls {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.controls button {
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: white;
+  margin: 0 20px;
+  cursor: pointer;
+}
+</style>
 </head>
 
 <body>
 
-<h1>🌍 My Journey</h1>
-
-<div id="map"></div>
-
-<h2>🎯 Interests</h2>
-
-<div class="interests">
-
-  <div class="interest-card">
-    <div class="interest-title">Snowboarding</div>
-    <div class="progress-bar"><div class="progress" style="width:80%"></div></div>
+<!-- NAVBAR -->
+<div class="navbar">
+  <div><strong>Benjamin Sun</strong></div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Photography</a>
   </div>
+</div>
 
-  <div class="interest-card">
-    <div class="interest-title">Beer Brewing</div>
-    <div class="progress-bar"><div class="progress" style="width:70%"></div></div>
-  </div>
+<!-- TITLE -->
+<div class="title">Photography Gallery 📷</div>
 
-  <div class="interest-card">
-    <div class="interest-title">Wakeboarding</div>
-    <div class="progress-bar"><div class="progress" style="width:75%"></div></div>
-  </div>
+<!-- GALLERY -->
+<div class="gallery">
 
-  <div class="interest-card">
-    <div class="interest-title">Sailing</div>
-    <div class="progress-bar"><div class="progress" style="width:78%"></div></div>
+<div class="card" onclick="openGallery('austria')">
+  <img src="images/austria/cover.jpg">
+  <div class="content">
+    <h3>Sölden, Austria 🏂</h3>
+    <p>Snowboarding in the Alps.</p>
+    <div class="date">2023</div>
   </div>
+</div>
 
-  <div class="interest-card">
-    <div class="interest-title">Photography</div>
-    <div class="progress-bar"><div class="progress" style="width:85%"></div></div>
+<div class="card" onclick="openGallery('amsterdam')">
+  <img src="images/amsterdam/cover.jpg">
+  <div class="content">
+    <h3>Amsterdam 🇳🇱</h3>
+    <p>Horse stables & countryside.</p>
+    <div class="date">2023</div>
   </div>
+</div>
 
-  <div class="interest-card">
-    <div class="interest-title">Book Writing</div>
-    <div class="progress-bar"><div class="progress" style="width:65%"></div></div>
+<div class="card" onclick="openGallery('levi')">
+  <img src="images/levi/cover.jpg">
+  <div class="content">
+    <h3>Levi, Finland ❄️</h3>
+    <p>Northern Lights & snowboarding.</p>
+    <div class="date">2024</div>
   </div>
+</div>
+
+<div class="card" onclick="openGallery('bruges')">
+  <img src="images/bruges/cover.jpg">
+  <div class="content">
+    <h3>Bruges, Belgium 🇧🇪</h3>
+    <p>City tour.</p>
+    <div class="date">2024</div>
+  </div>
+</div>
+
+<div class="card" onclick="openGallery('norway')">
+  <img src="images/norway/cover.jpg">
+  <div class="content">
+    <h3>Oslo & Trondheim 🇳🇴</h3>
+    <p>Nordic city exploration.</p>
+    <div class="date">2025</div>
+  </div>
+</div>
+
+<div class="card" onclick="openGallery('france')">
+  <img src="images/france/cover.jpg">
+  <div class="content">
+    <h3>Les Trois Vallées 🇫🇷</h3>
+    <p>Snowboarding.</p>
+    <div class="date">2025</div>
+  </div>
+</div>
+
+<div class="card" onclick="openGallery('qatar')">
+  <img src="images/qatar/cover.jpg">
+  <div class="content">
+    <h3>Doha, Qatar 🇶🇦</h3>
+    <p>National gallery visit.</p>
+    <div class="date">2025</div>
+  </div>
+</div>
+
+<div class="card" onclick="openGallery('vanuatu')">
+  <img src="images/vanuatu/cover.jpg">
+  <div class="content">
+    <h3>Vanuatu 🌊</h3>
+    <p>Scuba diving & ferry rides.</p>
+    <div class="date">2026</div>
+  </div>
+</div>
+
+<div class="card" onclick="openGallery('perisher')">
+  <img src="images/perisher/cover.jpg">
+  <div class="content">
+    <h3>Perisher 🇦🇺</h3>
+    <p>Snowboarding.</p>
+    <div class="date">2026</div>
+  </div>
+</div>
+
+<div class="card" onclick="openGallery('penrith')">
+  <img src="images/penrith/cover.jpg">
+  <div class="content">
+    <h3>Penrith, NSW 🇦🇺</h3>
+    <p>Wakeboarding.</p>
+    <div class="date">2026</div>
+  </div>
+</div>
 
 </div>
 
-<div class="back-btn">
-  <a href="index.html">← Back to Main Page</a>
+<!-- MODAL -->
+<div id="galleryModal" class="modal">
+  <span class="close" onclick="closeGallery()">&times;</span>
+
+  <img id="modalImage" class="modal-content">
+  <video id="modalVideo" class="modal-content" controls style="display:none;"></video>
+
+  <div class="controls">
+    <button onclick="prev()">⟨</button>
+    <button onclick="next()">⟩</button>
+  </div>
 </div>
 
 <script>
-  // Initialize map
-  const map = L.map('map').setView([0, 20], 2);
+const galleries = {
 
-  // Map tiles
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap'
-  }).addTo(map);
+  austria: [
+    {type:"img", src:"images/austria/1.jpg"},
+    {type:"video", src:"videos/austria/1.mp4"},
+    {type:"video", src:"videos/austria/2.mp4"}
+  ],
 
-  // 📍 YOUR LOCATIONS (EDIT THESE)
-  const locations = [
-    {
-      coords: [-33.8688, 151.2093],
-      title: "Sydney 🇦🇺",
-      desc: "UTS – Study, research, teaching"
-    },
-    {
-      coords: [1.3521, 103.8198],
-      title: "Singapore 🇸🇬",
-      desc: "High school + diploma"
-    },
-    {
-      coords: [39.9042, 116.4074],
-      title: "China 🇨🇳",
-      desc: "Background + early education"
-    }
-  ];
+  penrith: [
+    {type:"video", src:"videos/penrith/1.mp4"},
+    {type:"video", src:"videos/penrith/2.mp4"},
+    {type:"img", src:"images/penrith/1.jpg"}
+  ],
 
-  // Add markers
-  locations.forEach(loc => {
-    L.marker(loc.coords)
-      .addTo(map)
-      .bindPopup(`<b>${loc.title}</b><br>${loc.desc}`);
-  });
+  vanuatu: [
+    {type:"video", src:"videos/vanuatu/1.mp4"},
+    {type:"img", src:"images/vanuatu/1.jpg"},
+    {type:"video", src:"videos/vanuatu/2.mp4"}
+  ]
+
+  // 👉 add more locations same pattern
+};
+
+let currentGallery = [];
+let index = 0;
+
+function openGallery(name) {
+  currentGallery = galleries[name];
+  index = 0;
+
+  document.getElementById("galleryModal").style.display = "block";
+  showMedia();
+}
+
+function closeGallery() {
+  stopVideo();
+  document.getElementById("galleryModal").style.display = "none";
+}
+
+function stopVideo() {
+  const video = document.getElementById("modalVideo");
+  video.pause();
+  video.currentTime = 0;
+}
+
+function showMedia() {
+  const item = currentGallery[index];
+
+  const img = document.getElementById("modalImage");
+  const video = document.getElementById("modalVideo");
+
+  // 🔥 Always stop video before switching
+  stopVideo();
+
+  if (item.type === "img") {
+    img.style.display = "block";
+    video.style.display = "none";
+    img.src = item.src;
+  } else {
+    img.style.display = "none";
+    video.style.display = "block";
+
+    video.src = item.src;
+    video.load();
+  }
+}
+
+function next() {
+  index = (index + 1) % currentGallery.length;
+  showMedia();
+}
+
+function prev() {
+  index = (index - 1 + currentGallery.length) % currentGallery.length;
+  showMedia();
+}
+
+/* 🔥 EXTRA: keyboard support (pro feel) */
+document.addEventListener("keydown", function(e) {
+  const modal = document.getElementById("galleryModal");
+
+  if (modal.style.display === "block") {
+    if (e.key === "ArrowRight") next();
+    if (e.key === "ArrowLeft") prev();
+    if (e.key === "Escape") closeGallery();
+  }
+});
 </script>
 
 </body>
