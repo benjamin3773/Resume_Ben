@@ -2,24 +2,28 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Research Journey</title>
+<title>Research Journey | Benjamin (Zihao) Sun</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Benjamin Sun’s education, research, teaching and research interests.">
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
+<script src="assets/journey.js" defer></script>
 
 <style>
 body {
-  background: #0f172a;
-  color: white;
+  background: var(--bg);
+  color: var(--text);
   font-family: 'Inter', sans-serif;
 }
 
 .container {
   max-width: 1100px;
   margin: auto;
-  padding: 40px;
+  padding: 24px clamp(16px, 4vw, 40px) 48px;
 }
 
 h1, h2 {
@@ -28,7 +32,8 @@ h1, h2 {
 }
 
 #map {
-  height: 500px;
+  height: clamp(300px, 55vh, 500px);
+  z-index: 0;
   border-radius: 16px;
   margin: 30px 0;
 }
@@ -39,7 +44,7 @@ h1, h2 {
 }
 
 .card {
-  background: #1e293b;
+  background: var(--card);
   padding: 20px;
   border-radius: 14px;
   margin-bottom: 15px;
@@ -49,7 +54,7 @@ h1, h2 {
 .skills-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 32px;
   margin-top: 40px;
 }
 
@@ -88,29 +93,55 @@ h1, h2 {
   text-align: center;
   margin-top: 40px;
 }
+@media (max-width: 600px) { .skills-grid { grid-template-columns: 1fr; gap: 24px; } }
+.location-list { display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px;padding:0;list-style:none; }
+.location-list li { background:var(--card);padding:16px;border-radius:12px; }
+.map-status { color:var(--muted); }
+.skill-item { color:var(--text); }
 </style>
 </head>
 
-<body>
-
-<div class="container">
+<body class="subpage">
+<a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="navbar">
+    <a class="navbar-brand" href="index.html">Benjamin (Zihao) Sun</a>
+    <nav class="nav-links" id="site-navigation" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="index.html#papers">Papers</a>
+      <a href="journey.html" aria-current="page">Journey</a>
+      <a href="gallery.html">Photo Gallery</a>
+    </nav>
+    <div class="nav-actions">
+      <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to light theme" aria-pressed="false">☀</button>
+      <button type="button" id="menu-toggle" class="menu-toggle" aria-controls="site-navigation" aria-expanded="false">Menu</button>
+    </div>
+  </header>
+<main class="container" id="main-content">
 
 <h1>🌍 Research Journey</h1>
 
-<div id="map"></div>
+<p class="map-status" id="map-status" role="status">Places connected to my education, research collaborations and research interests. The list below is also available without the map.</p>
+<div id="map" aria-label="Map of education, research and research interests"></div>
+<ul class="location-list">
+  <li><strong>Sydney, Australia</strong><br>UTS · Study, tutoring and research</li>
+  <li><strong>Singapore</strong><br>Education background</li>
+  <li><strong>Hobart, Australia</strong><br>IMAS · Squidle+ marine AI collaboration</li>
+  <li><strong>Trondheim, Norway</strong><br>Arctic marine robotics research interests</li>
+  <li><strong>Eindhoven, Netherlands</strong><br>Multilingual bias research collaboration</li>
+</ul>
 
 <!-- ================= EDUCATION ================= -->
 <div class="section">
 <h2>Education</h2>
 
 <div class="card">
-<strong>Bachelor of Computer Science (Honours)</strong><br>
+<strong>Bachelor of Computing Science (Honours)</strong><br>
 University of Technology Sydney (UTS)<br>
-Dean’s List 2024 & 2025 · GPA 7.0
+Expected June 2027 · Dean’s List 2024 and 2025<br>GPA 7.00/7.00 · WAM 92.62 (June 2026 record)
 </div>
 
 <div class="card">
-<strong>Diploma in Applied Mathematics</strong><br>
+<strong>Advanced Diploma in Mathematics</strong><br>
 National University of Singapore
 </div>
 
@@ -121,7 +152,7 @@ National University of Singapore
 <h2>Research Experience</h2>
 
 <div class="card">
-WebArXiv: Evaluating Multimodal Agents on Time-Invariant arXiv Tasks<br>
+WebArxiv: A Reproducible Benchmark for Evaluating Multimodal Web Agents on arXiv Tasks<br>
 Developed multimodal web agent benchmark with reflection-based reasoning
 </div>
 
@@ -133,7 +164,7 @@ Human-in-the-loop image classification for marine scientists and Antarctic resea
 <div class="card">
 Multilingual Bias Evaluation Project<br>
 Conducted cross-lingual bias analysis on large language models across English, Spanish, German, and French.<br>
-Collaboration between UTS and Technology University of Eindhoven (Netherlands)
+Collaboration between UTS and Eindhoven University of Technology (Netherlands)
 </div>
 
 </div>
@@ -163,7 +194,7 @@ Research methodology, project design, and AI system development.
 
 <div class="card">
 <strong>IT PMO Assistant Administrator – UTS</strong><br>
-Managing IT projects, stakeholder communication, and system coordination.
+August 2024 – February 2025<br>Maintained dashboards and reporting, coordinated timelines and supported project-record audits.
 </div>
 
 <div class="card">
@@ -199,32 +230,32 @@ AI Technique Demonstrations: Q-Learning, Neural Networks, Web Agents
 
 <div class="skill-item">
 <div class="skill-name">🐍 Python</div>
-<div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+
 </div>
 
 <div class="skill-item">
 <div class="skill-name">🧠 Machine Learning</div>
-<div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+
 </div>
 
 <div class="skill-item">
 <div class="skill-name">📊 Data Analysis</div>
-<div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+
 </div>
 
 <div class="skill-item">
 <div class="skill-name">👁️ Computer Vision</div>
-<div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+
 </div>
 
 <div class="skill-item">
 <div class="skill-name">🌐 Web Automation</div>
-<div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+
 </div>
 
 <div class="skill-item">
 <div class="skill-name">⚙️ C++ / OpenGL</div>
-<div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+
 </div>
 
 </div>
@@ -235,32 +266,32 @@ AI Technique Demonstrations: Q-Learning, Neural Networks, Web Agents
 
 <div class="skill-item">
 <div class="skill-name">🏂 Snowboarding</div>
-<div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+
 </div>
 
 <div class="skill-item">
 <div class="skill-name">🍺 Beer Brewing</div>
-<div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+
 </div>
 
 <div class="skill-item">
 <div class="skill-name">🌊 Wakeboarding</div>
-<div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+
 </div>
 
 <div class="skill-item">
 <div class="skill-name">⛵ Sailing</div>
-<div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div>
+
 </div>
 
 <div class="skill-item">
 <div class="skill-name">📷 Photography</div>
-<div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+
 </div>
 
 <div class="skill-item">
 <div class="skill-name">📖 Book Writing</div>
-<div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
+
 </div>
 
 </div>
@@ -272,26 +303,6 @@ AI Technique Demonstrations: Q-Learning, Neural Networks, Web Agents
 <a href="index.html">← Back to Main Page</a>
 </div>
 
-</div>
-
-<script>
-const map = L.map('map').setView([20, 0], 2);
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-  
-const locations = [
-  { coords: [-33.8688,151.2093], title:"Sydney 🇦🇺", desc:"UTS – Study, tutoring, research"},
-  { coords: [1.3521,103.8198], title:"Singapore 🇸🇬", desc:"Education background"},
-  { coords: [-42.8821,147.3272], title:"Hobart 🇦🇺", desc:"Squidle+ marine AI project"},
-  { coords: [63.4305,10.3951], title:"Trondheim 🇳🇴", desc:"NTNU AUR Lab – IMAS connection"},
-  { coords: [51.4416,5.4697], title:"Eindhoven 🇳🇱", desc:"Multilingual Bias Research with TU Eindhoven"}
-];
-
-locations.forEach(loc=>{
-  L.marker(loc.coords).addTo(map)
-  .bindPopup(`<b>${loc.title}</b><br>${loc.desc}`);
-});
-</script>
-
+</main>
 </body>
 </html>

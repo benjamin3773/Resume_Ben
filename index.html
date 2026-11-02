@@ -457,50 +457,55 @@
       color: #f5f5f7 !important;
     }
   </style>
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site.js" defer></script>
 </head>
 
 <body>
 
   <!-- NAVBAR -->
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="navbar">
-    <div class="navbar-brand">Benjamin (Zihao) Sun</div>
-    <nav class="nav-links">
+    <a class="navbar-brand" href="index.html">Benjamin (Zihao) Sun</a>
+    <nav class="nav-links" id="site-navigation" aria-label="Main navigation">
       <a href="journey.html">Journey</a>
       <a href="gallery.html">Photo Gallery</a>
       <a href="#about">About</a>
+      <a href="#papers">Papers</a>
       <a href="#research">Research</a>
       <a href="#experience">Experience</a>
       <a href="#education">Education</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </nav>
-    <button id="theme-toggle" class="icon-link" style="font-size:16px;">
-        🌙
-    </button>
+    <div class="nav-actions">
+      <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to light theme" aria-pressed="false">☀</button>
+      <button type="button" id="menu-toggle" class="menu-toggle" aria-controls="site-navigation" aria-expanded="false">Menu</button>
+    </div>
   </header>
 
+  <main id="main-content">
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-inner">
       <!-- Left: card -->
       <div class="hero-card">
         <img src="profile.jpg" alt="Zihao Sun portrait" class="profile-photo" />
-        <!-- TODO: replace profile.jpg with your own image -->
 
-        <div class="name">Benjamin (Zihao) Sun</div>
+        <h1 class="name">Benjamin (Zihao) Sun</h1>
         <div class="tagline">Computing Science (Honours) · AI &amp; Data Analytics</div>
 
         <div class="hero-meta">
           <span>University of Technology Sydney (UTS)</span>
-          <span>Rydalmere, NSW 2216 · Australia</span>
+          <span>Rydalmere, NSW · Australia</span>
         </div>
 
         <div class="hero-links">
-          <a class="btn-pill" href="Benjamin_Sun_Professional_CV.pdf" target="_blank">
+          <a class="btn-pill" href="Benjamin_Sun_Professional_CV.pdf" target="_blank" rel="noopener noreferrer">
             ⬇️ Professional CV
           </a>
         
-          <a class="btn-pill" href="Benjamin_Sun_Research_CV.pdf" target="_blank">
+          <a class="btn-pill" href="Benjamin_Sun_Research_CV.pdf" target="_blank" rel="noopener noreferrer">
             ⬇️ Research CV
           </a>
         
@@ -508,18 +513,18 @@
             ✉️ Email
           </a>
         
-          <a class="icon-link" href="https://www.linkedin.com/in/zihao-sun-765b22237/" target="_blank">
+          <a class="icon-link" href="https://www.linkedin.com/in/zihao-sun-765b22237/" target="_blank" rel="noopener noreferrer">
             🔗 LinkedIn
           </a>
-          <a class="icon-link" href="https://www.seek.com.au/profiles/benjamin-sun-6cW2jH4Bpk" target="_blank">
+          <a class="icon-link" href="https://www.seek.com.au/profiles/benjamin-sun-6cW2jH4Bpk" target="_blank" rel="noopener noreferrer">
             💼 SEEK
           </a>
 
-          <a class="icon-link" href="https://www.researchgate.net/profile/Zihao-Sun-10" target="_blank">
+          <a class="icon-link" href="https://www.researchgate.net/profile/Zihao-Sun-10" target="_blank" rel="noopener noreferrer">
             🔬 ResearchGate
           </a>
-          <a class="icon-link" href="https://orcid.org/my-orcid?orcid=0009-0000-0072-8622" target="_blank">
-            🟢 OCRID
+          <a class="icon-link" href="https://orcid.org/0009-0000-0072-8622" target="_blank" rel="noopener noreferrer">
+            🟢 ORCID
           </a>
         </div>
       </div>
@@ -530,8 +535,8 @@
       <h2>AI, data, and marine intelligence.</h2>
       <p>
         I am a Bachelor of Computing Science (Honours) student at the University of Technology Sydney,
-        specialising in Artificial Intelligence and Data Analytics. I have consistently achieved High
-        Distinctions across all subjects (GPA 7.0) and was recognised on the Dean’s List in 2024 and 2025.
+        specialising in Artificial Intelligence and Data Analytics. My June 2026 academic record shows High
+        Distinctions in all 16 completed graded subjects (WAM 92.62; GPA 7.00/7.00). I was recognised on the Dean’s List in 2024 and 2025.
       </p>
       <p>
         Over the past two years, I have been actively engaged in research across the Australian Artificial
@@ -556,15 +561,57 @@
     </div>
   </div> <!-- ✅ CLOSE hero-inner -->
   </section> <!-- ✅ CLOSE hero -->
-  <main>
+
+    <section id="papers" aria-labelledby="papers-title">
+      <div class="section-inner">
+        <div>
+          <div class="section-label">Research papers</div>
+          <h2 class="section-title" id="papers-title">Publications and manuscripts</h2>
+          <p class="section-subtitle">Four research papers: one accepted at AJCAI 2026 and three under review. Status updated 2 November 2026.</p>
+        </div>
+        <div class="section-content">
+          <article class="item">
+            <h3 class="paper-title">WebArxiv: A Reproducible Benchmark for Evaluating Multimodal Web Agents on arXiv Tasks</h3>
+            <p class="paper-status">AJCAI 2026 · Accepted · First author</p>
+            <p>Zihao Sun, Zijing Shi and Ling Chen.</p>
+            <p class="paper-note">A reproducible benchmark evaluating 10 systems across 510 scholarly web tasks in six categories.</p>
+            <div class="paper-actions"><a href="https://arxiv.org/abs/2507.00938" target="_blank" rel="noopener noreferrer">Read on arXiv</a></div>
+          </article>
+          <article class="item">
+            <h3 class="paper-title">From Language to Country to Valence: A Multilingual Audit of Stereotype Bias Across LLMs</h3>
+            <p class="paper-status">NAACL 2027 Student Research Workshop · Under review</p>
+            <p>Zihao Sun.</p>
+            <p class="paper-note">A descriptive audit of 12,000 examples across four languages, three bias categories and six language models.</p>
+            <p class="paper-note">Preprint submitted to arXiv; public link pending.</p>
+            <div class="paper-actions"><a href="papers/Multilingual_Bias_Author_Manuscript.pdf" target="_blank" rel="noopener noreferrer">Author manuscript (PDF)</a></div>
+          </article>
+          <article class="item">
+            <h3 class="paper-title">From Source-Based Quizzes to Reteaching Decisions: A Practitioner Guide to ClassQuest</h3>
+            <p class="paper-status">ACE 2027 · Practitioner paper · Under review</p>
+            <p>Zihao Sun.</p>
+            <p class="paper-note">A source-based formative-assessment workflow, classroom reflection and separate software audits of quiz-report interpretation.</p>
+            <p class="paper-note">Preprint submitted to arXiv; public link pending.</p>
+            <div class="paper-actions"><a href="papers/ClassQuest_Author_Manuscript.pdf" target="_blank" rel="noopener noreferrer">Author manuscript (PDF)</a></div>
+          </article>
+          <article class="item">
+            <h3 class="paper-title">Teaching Students to Qualify AI Research Claims with PaperWeave</h3>
+            <p class="paper-status">ACE 2027 · Practitioner paper · Under review</p>
+            <p>Zihao Sun.</p>
+            <p class="paper-note">A teaching approach and worked claim-pair materials for evaluating the evidence behind connections between AI research papers.</p>
+            <div class="paper-actions"><a href="papers/PaperWeave_Author_Manuscript.pdf" target="_blank" rel="noopener noreferrer">Author manuscript (PDF)</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- RESEARCH -->
     <section id="research">
       <div class="section-inner">
         <div>
           <div class="section-label">Research</div>
-          <h3 class="section-title">UTS Research Experience</h3>
+          <h2 class="section-title">UTS Research Experience</h2>
           <p class="section-subtitle">
-            Supervised projects across Webagents, LLMs bias, Marine Image Processing, robotics, and quantum software (June 2024 – Present).
+            Research across multimodal web agents, multilingual model-bias evaluation and marine image classification (June 2024 – Present).
           </p>
         </div>
         <div class="section-content">
@@ -605,15 +652,15 @@
             <!-- 🔥 PAPER CARD BELOW -->
             <div style="margin-top:18px;">
           
-              <a href="https://arxiv.org/abs/2507.00938" target="_blank">
-                <img src="webarxiv_preview.png" alt="WebArXiv paper preview"
+              <a href="https://arxiv.org/abs/2507.00938" target="_blank" rel="noopener noreferrer">
+                <img src="webarxiv_preview.png" alt="WebArXiv paper preview" loading="lazy"
                      style="width:100%; border-radius:16px; margin-bottom:10px;">
               </a>
           
               <div style="font-size:14px; color:var(--text-muted); display:flex; align-items:center; gap:10px;">
-                <img src="profile.jpg" style="width:24px; height:24px; border-radius:50%;">
+                <img src="profile.jpg" alt="" loading="lazy" style="width:24px; height:24px; border-radius:50%;">
                 <span>
-                  <a href="https://arxiv.org/abs/2507.00938" target="_blank"
+                  <a href="https://arxiv.org/abs/2507.00938" target="_blank" rel="noopener noreferrer"
                      style="color:var(--accent); text-decoration:none;">
                     View Paper (arXiv:2507.00938)
                   </a>
@@ -634,7 +681,7 @@
             <div class="item-tagline">Marine image classification &amp; ecological AI</div>
             <ul>
               <li>Developed human-in-the-loop classification pipelines for marine ecological datasets.</li>
-              <li>Designed workflows to filter hard substrates and improve species detection accuracy.</li>
+              <li>Designed scientist-facing workflows for reviewing imagery, filtering hard substrates and supporting species detection.</li>
               <li>Supported real-world marine science applications using AI-assisted annotation systems.</li>
             </ul>
             <div class="pill-row">
@@ -647,7 +694,7 @@
           <div class="item">
             <div class="item-header">
               <div class="item-title">
-                Multilingual Debias Research Project
+                Multilingual Language-Model Bias Evaluation
               </div>
               <div class="item-meta">Jun 2024 – April 2025 · UTS AAII</div>
             </div>
@@ -675,7 +722,7 @@
       <div class="section-inner">
         <div>
           <div class="section-label">Experience</div>
-          <h3 class="section-title">Professional Roles</h3>
+          <h2 class="section-title">Professional Roles</h2>
           <p class="section-subtitle">
             Blending IT project operations, teaching, and student leadership at UTS.
           </p>
@@ -690,7 +737,7 @@
             </div>
             <div class="item-tagline">Mathematical Statistics · Python Programming · CS Research Studio</div>
             <ul>
-              <li>Delivered structured tutorials and workshops for cohorts of 50+ students.</li>
+              <li>Delivered 50+ tutorial sessions in statistics, Python programming and computing research; taught classes of up to 50 students.</li>
               <li>Designed interactive materials using slides, quizzes, and live coding.</li>
               <li>Supported students from foundational to advanced problem-solving levels.</li>
             </ul>
@@ -718,11 +765,11 @@
             </div>
             <div class="item-tagline">Lean portfolio management &amp; operational support</div>
             <ul>
-              <li>Manage ServiceConnect tickets and coordinate with ITU project managers and ART leads.</li>
-              <li>Maintain Lean Business Case dashboards in Excel and support Power BI &amp; SharePoint reporting.</li>
-              <li>Update Jira Kanban/Roadmap boards and create Miro-based timelines for projects.</li>
-              <li>Handle project creation, stage changes, and audits within Project Connect (Clarity).</li>
-              <li>Support logistics such as web-room bookings and event catering.</li>
+              <li>Managed ServiceConnect tickets and coordinated with ITU project managers and ART leads.</li>
+              <li>Maintained Lean Business Case dashboards in Excel and supported Power BI &amp; SharePoint reporting.</li>
+              <li>Updated Jira Kanban/Roadmap boards and created Miro-based timelines for projects.</li>
+              <li>Handled project creation, stage changes, and audits within Project Connect (Clarity).</li>
+              <li>Supported logistics such as web-room bookings and event catering.</li>
             </ul>
             <div class="pill-row">
               <span class="pill">Project Connect (Clarity)</span>
@@ -742,7 +789,7 @@
       <div class="section-inner">
         <div>
           <div class="section-label">Education</div>
-          <h3 class="section-title">Academic Background</h3>
+          <h2 class="section-title">Academic Background</h2>
           <p class="section-subtitle">
             Formal training across computing science and mathematics in Australia and Singapore.
           </p>
@@ -754,11 +801,11 @@
               <div class="item-title">
                 Bachelor of Computing Science (Honours)
               </div>
-              <div class="item-meta">Expected May 2026 · UTS</div>
+              <div class="item-meta">Expected June 2027 · UTS</div>
             </div>
             <ul>
               <li>Specialisation in AI and Data Analytics.</li>
-              <li>Dean’s List 2024; High Distinctions in all completed subjects.</li>
+              <li>Dean’s List 2024 and 2025; WAM 92.62 and GPA 7.00/7.00 (June 2026 academic record).</li>
             </ul>
           </div>
 
@@ -795,7 +842,7 @@
       <div class="section-inner">
         <div>
           <div class="section-label">Skills</div>
-          <h3 class="section-title">Technical &amp; Professional</h3>
+          <h2 class="section-title">Technical &amp; Professional</h2>
           <p class="section-subtitle">
             Tools and capabilities I use across research, analytics, and project work.
           </p>
@@ -838,7 +885,7 @@
       <div class="section-inner">
         <div>
           <div class="section-label">Contact</div>
-          <h3 class="section-title">Let’s connect</h3>
+          <h2 class="section-title">Let’s connect</h2>
           <p class="section-subtitle">
             Open to research collaborations, honours projects, and AI / data roles.
           </p>
@@ -847,8 +894,8 @@
         <div class="section-content">
           <div class="contact-card">
             <p><strong>Email:</strong> <a href="mailto:benjamin37731481@gmail.com">benjamin37731481@gmail.com</a></p>
-            <p><strong>Location:</strong> Rydalmere, NSW 2216, Australia</p>
-            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/zihao-sun-765b22237/" target="_blank" rel="noopener">
+            <p><strong>Location:</strong> Rydalmere, NSW, Australia</p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/zihao-sun-765b22237/" target="_blank" rel="noopener noreferrer">
               Benjamin Sun on LinkedIn
             </a></p>
             <p style="margin-top:10px;">
@@ -861,39 +908,10 @@
   </main>
 
   <footer>
-    © <span id="year"></span> Benjamin (Zihao) Sun · University of Technology Sydney
+    © <span data-current-year>2026</span> Benjamin (Zihao) Sun · University of Technology Sydney
   </footer>
-  <script>
-    const toggleBtn = document.getElementById('theme-toggle');
-    const body = document.body;
+
   
-    // Load saved theme
-    const savedTheme = localStorage.getItem('theme');
-  
-    if (savedTheme === 'light') {
-      body.classList.add('light-mode');
-      toggleBtn.textContent = '🌙'; // show moon (switch to dark)
-    } else {
-      body.classList.remove('light-mode');
-      toggleBtn.textContent = '☀️'; // show sun (switch to light)
-    }
-  
-    toggleBtn.addEventListener('click', () => {
-      body.classList.toggle('light-mode');
-  
-      if (body.classList.contains('light-mode')) {
-        localStorage.setItem('theme', 'light');
-        toggleBtn.textContent = '🌙'; // now in light → show moon
-      } else {
-        localStorage.setItem('theme', 'dark');
-        toggleBtn.textContent = '☀️'; // now in dark → show sun
-      }
-    });
-  </script>
-  
-  <script>
-    // set current year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+
 </body>
 </html>
