@@ -25,6 +25,8 @@ identifier has been assigned; submission receipt numbers are not public paper ID
 The two 2027 conference manuscripts are listed as under review. The
 multilingual-bias preprint is public at https://arxiv.org/abs/2611.02585 and
 ClassQuest at https://arxiv.org/abs/2611.02590 (verified 6 November 2026).
+Use the public arXiv abstract pages for paper links and arXiv PDF URLs for
+downloads; link relevant research and journey entries to the same records.
 
 The two root-level CV PDFs are the downloads linked from the homepage.
 
