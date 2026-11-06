@@ -22,9 +22,10 @@ Paper entries are in the `papers` section of `index.html`. Author manuscripts
 are in `papers/`. Keep conference submission, acceptance, proceedings publication
 and arXiv announcement statuses distinct. Add public arXiv links only after an
 identifier has been assigned; submission receipt numbers are not public paper IDs.
-The three 2027 conference manuscripts are under review as of 2 November 2026.
-The multilingual-bias and ClassQuest preprints have been submitted to arXiv;
-PaperWeave has not. No acceptance is implied by either status.
+The three 2027 conference manuscripts are listed as under review. The
+multilingual-bias preprint is public at https://arxiv.org/abs/2611.02585 and
+ClassQuest at https://arxiv.org/abs/2611.02590 (verified 6 November 2026).
+PaperWeave has not been submitted to arXiv.
 
 The two root-level CV PDFs are the downloads linked from the homepage.
 
